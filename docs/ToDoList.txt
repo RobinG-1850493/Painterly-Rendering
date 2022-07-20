@@ -1,0 +1,94 @@
+11/04 - 17/04
+
+    IDEA:: Use edge detector to generate edges, if strokes crosses edge --> stop stroke
+    -- WORKS :)
+
+    1. Add color pallettes https://www.cs.tau.ac.il/~dcor/articles/2006/Color-Harmonization.pdf
+        - Create a set of presets 
+        - import color palette from image 
+        - have preview window of theme
+        - change vibrancy (vary value)
+    2. Research more possible painting styles, add them 
+    3. Add "live painter" that updates canvas every couple of strokes (depending on performance)
+    4. Complete video rendering algorithm, including temporal coherence
+        - port to simple algorithm for real time tries
+    5. Research Texturing and how one would add it 
+
+ Extra:
+    - Black outlining using canny edge
+    - Try bilateral filter instead of gaussian blur
+    - Use Edge Tangent Flow instead of image gradient http://www.cs.umsl.edu/~kang/Papers/kang_npar07_hi.pdf
+    - Add depth buffer
+    - Speed up computation side (using gpu if possible)
+    - Image segmentation to find regions in image
+        - region growing? watershed transform?
+        - try stuff
+
+Minor:
+    - Change Theme names to be more accurate
+    - Fix layer slider bug
+    - fix save button
+
+Write report and send to dr. Di Fiore
+
+Roadmap/ToDo:
+    # */ = done
+
+
+    - Make UI for current algorithm, add styles and parameters + results window (that shows canvas being drawn). TKinter? PySimpleGUI
+        - add comparison between original/result /*
+        - add layer slider to change between layers /*
+        - add window to show progress /*
+        - save image button /*
+        - allow for variable number of layers /*
+        - optimize algorithm, very slow atm ////////// -- need to reconsider approach here
+        - add Simple Hertzman /*
+        - add styles to auto set parameters (custom for self)  -- add jitter and curvature first
+        - add curvature limit
+        - increase window size
+        - fix general readability
+        - allow for opacity?
+
+    - Use Numba to run on gpu
+    - Add color themes
+    - Texture
+
+Optimization:
+    3.1s in makeSpline
+    3.5s total
+
+Ideas:
+https://cs.uwaterloo.ca/~csk/Old/cs798/winter2008/a1/
+https://onlinelibrary.wiley.com/doi/10.1002/cav.1435
+
+Edge painting: use edge detection to find edges and paint them black 
+
+Big goals
+    1. Implement a segmentation algorithm for Hertzman http://graphics.uni-konstanz.de/publikationen/Lindemeier2016ArtisticCompositionPainterly/index.html
+        file:///C:/Users/Robin/Desktop/inf-masterproef-21-22-student-RobinG-1850493/code/Painterly%20Rendering/CVPR.2009.5206707.pdf
+        -- Allows to have more detail on foreground, less on background --> computation speedup + overpainting issue
+        https://github.com/adfoucart/image-processing-notebooks/blob/main/V31%20-%20Region%20growing%20with%20the%20watershed%20transform.ipynb
+
+        watershed transform
+
+    1.5 layering through masking https://faculty.cc.gatech.edu/~hays/papers/IVBPA_Final.pdf
+
+    2. Add Color Themes https://omarhesham.com/arslab/NonPhotorealisticRendering/ohesham_painterly_finalreport.pdf
+    3. Parallellize Hertzman and run on webcam
+    4. Add texturing to Hertzman
+    5. Implement Particle Based Algorithm http://cs.brown.edu/~bjm/painterly.pdf
+
+    -- Add live painter?
+
+
+    - Add Color Jitter, Noise and general small improvements, write comments == Color Jitter needs a rethink, can slightly vary indivual circles, not inside that circle
+
+    -- Add Particle algorithm to application. 10/03
+
+    --- Improve UI, create comparison method (slider), optimize algorithms.
+
+    ---- Improve upon current algorithms
+        - Parallellize Hertzman and attempt real-time rendering using a webcam.
+        - Introduce layering into Hertzman (Separate image into foreground and background segments and paint them separate to help with excess strokes).
+    
+    ----- ?

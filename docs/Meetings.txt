@@ -1,0 +1,8 @@
+25/03
+
+1. Demo of application, examples of styles etc. 
+2.  Brainstorm on next steps
+    - Put forward my own Ideas
+        --> Image Segmentation as own extension
+    - Extend algorithm to handle videos suggested by Proff. Di Fiore
+3. Dates for next report and meeting.

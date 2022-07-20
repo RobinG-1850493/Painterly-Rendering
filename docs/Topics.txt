@@ -1,0 +1,14 @@
+-- Update, show simple/spline renderer
+    - show saved images
+
+-- Expansions:
+    - Texturing
+    - Simulate different techniques (Watercolor, oil, marbling, pencil)
+    - Real-Time rendering on GPU (opengl, cuda, ...)
+    - Painterly Rendering by relaxation
+    - Particle Algorithm (Can look really good), use of textures representing paint brush styles
+    - Image Segmentation (Build painting in sections, separate foreground background) -- vb houses.
+    - Create application for multiple approaches (package)
+    - Improve upon Hertzman (Adding layers, texturing, simulate paint brush roughness)
+
+-- Meetings/Summaries dates and structure
